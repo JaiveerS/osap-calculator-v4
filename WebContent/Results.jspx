@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core"  xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:f="http://java.sun.com/jsp/jstl/fmt" version="2.0">
+	<jsp:directive.page contentType="text/html; charset=ISO-8859-1" 
+		pageEncoding="ISO-8859-1" session="true"/>
+	<jsp:output doctype-root-element="html"
+		doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+		omit-xml-declaration="true" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<LINK rel="StyleSheet" href="${pageContext.request.contextPath}/res/mc.css" type="text/css" title="cse4413" media="screen,print"/>
+	<title>Result</title>
+</head>
+<body>
+	<header>
+		<H1>Student Loan Application</H1>
+	</header>
+	<nav>
+		<UL>
+			<LI><a href="">Home</a></LI>
+			<LI><a href="">About</a></LI>
+		</UL>
+	</nav>
+	<FORM action="" method="POST" class="resultForm">
+		<FIELDSET class="shift">
+			<legend>${applicationName}</legend>
+			
+			<STRONG style="margin-right: 150px">Grace Period Interest:</STRONG> 
+			<f:formatNumber type="currency">${graceInterest}</f:formatNumber> <BR/>
+			
+			<STRONG style="margin-right: 163px">Monthly payments:</STRONG> 
+			<f:formatNumber type="currency" >${payment}</f:formatNumber> <BR/>
+			
+			<STRONG >Calculations are based on a fixed rate based on Prime Rate + ${fixedInterest}%</STRONG><BR /> <BR />
+			<BUTTON action="Osap" name="restart" value="true">Re-compute</BUTTON>
+		</FIELDSET>
+	</FORM>
+	<footer><IMG alt="Yorku Logo" src="https://esse.lassonde.yorku.ca/wp-content/uploads/2017/10/Lassonde_300.jpg" width="20%" height="20%"/> <BR />York University</footer>
+</body>
+</html>
+</jsp:root>
